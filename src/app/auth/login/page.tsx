@@ -1,4 +1,10 @@
+import Button from "@/components/Button/Button";
+
 function LoginPage() {
-    return <h2>Login</h2>
+    return (
+        <div>
+            <h2>Login</h2>
+            <Button/>
+        </div>)
 }
 export default LoginPage
