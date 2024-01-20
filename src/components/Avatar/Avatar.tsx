@@ -13,7 +13,7 @@ const StyledAvatar = styled.img<{
   width: ${(props) => props.width};
 `;
 interface IAvatarProps {
-  url: string;
+  url?: string;
   size: "small" | "large";
 }
 
