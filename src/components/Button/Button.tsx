@@ -9,8 +9,8 @@ const StyledButton = styled.button<{
 }>`
   background-color: ${(props) => props.color};
   color: ${(props) => props.textColor};
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 60px;
+  border-radius: 10px;
   border: ${(props) => props.border};
 `;
 
@@ -23,7 +23,7 @@ const Button = ({ variant, children }: PropsWithChildren<IButtonProps>) => {
       case "primary":
         return { color: "#ff748d", textColor: "white", border: "none" };
       case "secondary":
-        return { color: "white", textColor: "black", border: "1px solid" };
+        return { color: "white", textColor: "black", border: "1px solid grey" };
       case "transparent":
         return { color: "white", textColor: "black", border: "none" };
     }
