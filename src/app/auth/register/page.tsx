@@ -3,6 +3,7 @@ import Button from "@/components/Button/Button";
 import Typography from "@/components/Typography/Typography";
 import TextBox from "@/components/TextBox/TextBox";
 import styled from "styled-components";
+import { useRouter } from "next/navigation";
 
 const StyledContainer = styled.div`
   padding: 20px 50px;
@@ -22,9 +23,12 @@ const StyledButton = styled.div`
   justify-content: flex-end;
 `;
 function Register() {
+  const router = useRouter();
   return (
     <StyledContainer>
-      <Button variant={"secondary"}>Login</Button>
+      <Button variant={"secondary"} onClick={() => router.push("/auth/login")}>
+        Login
+      </Button>
       <StyledTitle>
         <Typography variant={"title1"} color={"black"}>
           Create Account

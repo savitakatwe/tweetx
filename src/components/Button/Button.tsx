@@ -1,5 +1,5 @@
 "use client";
-import React, { PropsWithChildren, useMemo } from "react";
+import React, { ButtonHTMLAttributes, PropsWithChildren, useMemo } from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button<{
@@ -14,10 +14,14 @@ const StyledButton = styled.button<{
   border: ${(props) => props.border};
 `;
 
-interface IButtonProps {
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "primary" | "secondary" | "transparent";
 }
-const Button = ({ variant, children }: PropsWithChildren<IButtonProps>) => {
+const Button = ({
+  variant,
+  children,
+  ...otherProps
+}: PropsWithChildren<IButtonProps>) => {
   const buttonColor = useMemo(() => {
     switch (variant) {
       case "primary":
@@ -34,6 +38,7 @@ const Button = ({ variant, children }: PropsWithChildren<IButtonProps>) => {
       color={buttonColor.color}
       textColor={buttonColor.textColor}
       border={buttonColor.border}
+      {...otherProps}
     >
       {children}
     </StyledButton>

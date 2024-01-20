@@ -4,6 +4,7 @@ import TextBox from "@/components/TextBox/TextBox";
 import Avatar from "@/components/Avatar/Avatar";
 import Typography from "@/components/Typography/Typography";
 import styled from "styled-components";
+import { useRouter } from "next/navigation";
 
 const StyledContainer = styled.div`
   padding: 20px 50px;
@@ -24,9 +25,15 @@ const StyledButton = styled.div`
   align-items: center;
 `;
 function LoginPage() {
+  const router = useRouter();
   return (
     <StyledContainer>
-      <Button variant={"secondary"}>Create Account</Button>
+      <Button
+        variant={"secondary"}
+        onClick={() => router.push("/auth/register")}
+      >
+        Create Account
+      </Button>
       <StyledTitle>
         <Typography variant={"title1"} color={"black"}>
           Login
