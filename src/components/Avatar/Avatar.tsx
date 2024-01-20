@@ -1,8 +1,9 @@
 "use client";
 import styled from "styled-components";
 import { PropsWithChildren, useMemo } from "react";
+import Image from "next/image";
 
-const StyledAvatar = styled.img<{
+const StyledAvatar = styled(Image)<{
   width: string;
   height: string;
 }>`
@@ -13,7 +14,7 @@ const StyledAvatar = styled.img<{
   width: ${(props) => props.width};
 `;
 interface IAvatarProps {
-  url?: string;
+  url: string;
   size: "small" | "large";
 }
 
@@ -21,12 +22,19 @@ const Avatar = ({ url, size }: PropsWithChildren<IAvatarProps>) => {
   const avatarSize = useMemo(() => {
     switch (size) {
       case "small":
-        return { width: "50px", height: "50px" };
+        return { width: "50", height: "50" };
       case "large":
-        return { width: "100px", height: "100px" };
+        return { width: "100", height: "100" };
     }
   }, [size]);
 
-  return <StyledAvatar width={avatarSize.width} height={avatarSize.height} />;
+  return (
+    <StyledAvatar
+      src={url}
+      alt={url}
+      width={avatarSize.width}
+      height={avatarSize.height}
+    />
+  );
 };
 export default Avatar;
