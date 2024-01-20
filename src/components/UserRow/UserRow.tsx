@@ -1,6 +1,5 @@
 "use client";
 import Avatar from "@/components/Avatar/Avatar";
-
 import Typography from "@/components/Typography/Typography";
 import Button from "@/components/Button/Button";
 import styled from "styled-components";
