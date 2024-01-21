@@ -7,9 +7,9 @@ class Storage {
     }
   }
 
-  static setItem(key: string, value: unknown) {
+  static setItem(key: string, value: string) {
     try {
-      return localStorage.setValue(key, value);
+      return localStorage.setItem(key, value);
     } catch (e) {
       console.log(e);
     }
