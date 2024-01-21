@@ -1,7 +1,7 @@
 "use client";
 import Feed from "@/components/Feed/Feed";
 import postService from "@/services/postService";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { event } from "next/dist/build/output/log";
 import { ICreateFeedDtoResponse, IFeedDtoResponse } from "@/types/feed.dto";
 import TextBox from "@/components/TextBox/TextBox";
@@ -22,13 +22,15 @@ const MyFeeds = () => {
     fetchFeeds();
   }, []);
 
-  const submit = () => {
+  const submit2 = useCallback(() => {
     const res: Promise<ICreateFeedDtoResponse> = postService.createFeed({
       message: message,
     });
     fetchFeeds();
     setMessage("");
-  };
+  }, [message]);
+
+  const submit = () => {};
   return (
     <>
       {feeds.map((item) => (
