@@ -24,7 +24,6 @@ const ToolBar = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  console.log(pathname);
   const toolbarArray = [
     { label: "Feed", value: "/home/feed" },
     { label: "User", value: "/home/user" },

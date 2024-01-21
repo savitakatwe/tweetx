@@ -1,5 +1,5 @@
 "use client";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect } from "react";
 import Avatar from "@/components/Avatar/Avatar";
 import Typography from "@/components/Typography/Typography";
 import styled from "styled-components";
