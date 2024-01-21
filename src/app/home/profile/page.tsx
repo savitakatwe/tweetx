@@ -4,11 +4,12 @@ import Tabs from "@/components/Tabs/Tabs";
 import { useState } from "react";
 import MyFeeds from "@/widgets/MyFeeds/MyFeeds";
 import Followers from "@/widgets/Followers/Followers";
+import Storage from "@/services/storage";
 
 const Profile = () => {
   //let selectedTab: string;
   const [selectedTab, setSelectedTab] = useState("post");
-  const name = localStorage.getItem("name") || "";
+  const name = Storage.getItem("name") || "";
   return (
     <>
       <UserProfile

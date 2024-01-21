@@ -8,6 +8,7 @@ import TextBox from "@/components/TextBox/TextBox";
 import Button from "@/components/Button/Button";
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
+import Storage from "@/services/storage";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ const FeedHome = () => {
   const router = useRouter();
   const [feeds, setFeeds] = useState<IFeedDtoResponse[]>([]);
   const [message, setMessage] = useState("");
-  const name = localStorage.getItem("name") || "";
+  const name = Storage.getItem("name") || "";
   const fetchFeeds = async () => {
     const res = await postService.getMyFeed();
     setFeeds(res);

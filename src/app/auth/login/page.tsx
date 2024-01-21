@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import authService from "@/services/authService";
-import { event } from "next/dist/build/output/log";
+import Storage from "@/services/storage";
 
 const StyledContainer = styled.div`
   padding: 20px 50px;
@@ -37,8 +37,8 @@ function LoginPage() {
       textId: email,
       password: password,
     });
-    localStorage.setItem("token", res.jwtToken);
-    localStorage.setItem("name", res.user.name);
+    Storage.setItem("token", res.jwtToken);
+    Storage.setItem("name", res.user.name);
     if (res) {
       router.push("/home/profile");
     }

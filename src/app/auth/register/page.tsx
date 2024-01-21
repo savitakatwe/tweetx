@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import authService from "@/services/authService";
-import { cookies } from "next/headers";
+import Storage from "@/services/storage";
 
 const StyledContainer = styled.div`
   padding: 20px 50px;
@@ -40,7 +40,7 @@ function Register() {
       password: password,
     });
 
-    localStorage.setItem("token", res.jwtToken);
+    Storage.setItem("token", res.jwtToken);
     if (res) {
       router.push("/auth/login");
     }

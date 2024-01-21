@@ -1,10 +1,11 @@
 import { ICreateFeedDtoRequest, IFeedDtoResponse } from "@/types/feed.dto";
 import { ILoginDtoRequest } from "@/types/login.dto";
 import { backendUrl } from "@/configs/configs";
+import Storage from "@/services/storage";
 
 class PostService {
   async getMyFeed(): Promise<IFeedDtoResponse[]> {
-    const token = localStorage.getItem("token");
+    const token = Storage.getItem("token");
     const res = await fetch("http://localhost:4000/getMyFeed", {
       method: "GET",
       headers: {
@@ -19,7 +20,7 @@ class PostService {
   }
 
   async createFeed(payload: ICreateFeedDtoRequest) {
-    const token = localStorage.getItem("token");
+    const token = Storage.getItem("token");
     const res = await fetch(backendUrl + "post", {
       method: "POST",
       body: JSON.stringify(payload),
