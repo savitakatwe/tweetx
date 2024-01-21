@@ -1,5 +1,6 @@
 import { ICreateFeedDtoRequest, IFeedDtoResponse } from "@/types/feed.dto";
 import { ILoginDtoRequest } from "@/types/login.dto";
+import { backendUrl } from "@/configs/configs";
 
 class PostService {
   async getMyFeed(): Promise<IFeedDtoResponse[]> {
@@ -19,7 +20,7 @@ class PostService {
 
   async createFeed(payload: ICreateFeedDtoRequest) {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:4000/post", {
+    const res = await fetch(backendUrl + "post", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

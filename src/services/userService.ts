@@ -1,9 +1,10 @@
 import { IUser } from "@/types/IUser";
+import { backendUrl } from "@/configs/configs";
 
 class UserService {
   async getUsers(): Promise<IUser[]> {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:4000/getUsers", {
+    const res = await fetch(backendUrl + "getUsers", {
       method: "GET",
       headers: {
         accept: "application/json",

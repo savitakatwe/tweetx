@@ -1,9 +1,10 @@
 import { IFollowDto } from "@/types/follow.dto";
+import { backendUrl } from "@/configs/configs";
 
 class FollowService {
   async followUser(payload: IFollowDto) {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:4000/followUser", {
+    const res = await fetch(backendUrl + "followUser", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

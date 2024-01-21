@@ -1,9 +1,9 @@
 import { ILoginDtoRequest, ILoginDtoResponse } from "@/types/login.dto";
 import { ISignUpDtoRequest, ISignUpDtoResponse } from "@/types/register.dto";
-
+import { backendUrl } from "@/configs/configs";
 class AuthService {
   async login(payload: ILoginDtoRequest): Promise<ILoginDtoResponse> {
-    const res = await fetch("http://localhost:4000/login", {
+    const res = await fetch(backendUrl + "login", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -17,7 +17,7 @@ class AuthService {
   }
 
   async register(payload: ISignUpDtoRequest): Promise<ISignUpDtoResponse> {
-    const res = await fetch("http://localhost:4000/signup", {
+    const res = await fetch(backendUrl + "signup", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
