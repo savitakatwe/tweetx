@@ -1,19 +1,11 @@
 "use client";
 import Feed from "@/components/Feed/Feed";
 import postService from "@/services/postService";
-import { useCallback, useEffect, useState } from "react";
-import { event } from "next/dist/build/output/log";
-import { ICreateFeedDtoResponse, IFeedDtoResponse } from "@/types/feed.dto";
-import TextBox from "@/components/TextBox/TextBox";
-import Button from "@/components/Button/Button";
-import styled from "styled-components";
-import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { IFeedDtoResponse } from "@/types/feed.dto";
 
 const MyFeeds = () => {
-  const router = useRouter();
   const [feeds, setFeeds] = useState<IFeedDtoResponse[]>([]);
-  const [message, setMessage] = useState("");
-  const name = localStorage.getItem("name") || "";
   const fetchFeeds = async () => {
     const res = await postService.getMyFeed();
     setFeeds(res);
@@ -22,15 +14,6 @@ const MyFeeds = () => {
     fetchFeeds();
   }, []);
 
-  const submit2 = useCallback(() => {
-    const res: Promise<ICreateFeedDtoResponse> = postService.createFeed({
-      message: message,
-    });
-    fetchFeeds();
-    setMessage("");
-  }, [message]);
-
-  const submit = () => {};
   return (
     <>
       {feeds.map((item) => (
