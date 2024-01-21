@@ -22,6 +22,7 @@ const StyledDiv2 = styled.div`
   gap: 10px;
   flex-direction: column;
   display: flex;
+  width: 100%;
 `;
 interface IFeedProps {
   url: string;
