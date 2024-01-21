@@ -69,11 +69,13 @@ function Register() {
         <TextBox
           placeholder={"Password"}
           value={password}
+          type="password"
           onChange={(event) => setPassword(event.target.value)}
         />
         <TextBox
           placeholder={"Confirm Password"}
           value={confirmPassword}
+          type="password"
           onChange={(event) => setConfirmPassword(event.target.value)}
         />
       </StyledTextBox>

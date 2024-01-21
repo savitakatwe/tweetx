@@ -3,7 +3,8 @@ import Avatar from "@/components/Avatar/Avatar";
 import Typography from "@/components/Typography/Typography";
 import Button from "@/components/Button/Button";
 import styled from "styled-components";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
+import followService from "@/services/followService";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -21,8 +22,10 @@ interface IUserRowProps {
   name: string;
   url: string;
   followingNumber: number;
-  isFollowing: string;
+  isFollowing?: boolean;
+  onClick: () => void;
 }
+
 const UserRow = (props: PropsWithChildren<IUserRowProps>) => {
   return (
     <>
@@ -37,7 +40,12 @@ const UserRow = (props: PropsWithChildren<IUserRowProps>) => {
           </Typography>
         </StyledDiv>
         <div>
-          <Button variant={"primary"}>{props.isFollowing}</Button>
+          <Button
+            variant={props.isFollowing ? "transparent" : "primary"}
+            onClick={props.onClick}
+          >
+            {props.isFollowing ? "Following" : "Follow"}
+          </Button>
         </div>
       </StyledContainer>
     </>

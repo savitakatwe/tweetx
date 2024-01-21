@@ -9,14 +9,7 @@ import Button from "@/components/Button/Button";
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
 
-const StyledDiv = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 20px;
-`;
-
-const FeedHome = () => {
+const MyFeeds = () => {
   const router = useRouter();
   const [feeds, setFeeds] = useState<IFeedDtoResponse[]>([]);
   const [message, setMessage] = useState("");
@@ -38,17 +31,6 @@ const FeedHome = () => {
   };
   return (
     <>
-      <StyledDiv>
-        <TextBox
-          placeholder={"Message"}
-          value={message}
-          onChange={(event) => setMessage(event.target.value)}
-        ></TextBox>
-        <Button variant={"primary"} onClick={submit}>
-          Write
-        </Button>
-      </StyledDiv>
-
       {feeds.map((item) => (
         <Feed
           key={item._id}
@@ -63,4 +45,4 @@ const FeedHome = () => {
     </>
   );
 };
-export default FeedHome;
+export default MyFeeds;

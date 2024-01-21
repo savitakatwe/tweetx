@@ -2,6 +2,8 @@
 import UserProfile from "@/components/UserProfile/UserProfile";
 import Tabs from "@/components/Tabs/Tabs";
 import { useState } from "react";
+import MyFeeds from "@/widgets/MyFeeds/MyFeeds";
+import Followers from "@/widgets/Followers/Followers";
 
 const Profile = () => {
   //let selectedTab: string;
@@ -29,6 +31,9 @@ const Profile = () => {
         }}
         selectedTab={selectedTab}
       />
+      {selectedTab === "post" && <MyFeeds />}
+      {selectedTab === "followers" && <Followers />}
+      {selectedTab === "following" && <Followers />}
     </>
   );
 };
