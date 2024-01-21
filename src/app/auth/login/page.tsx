@@ -38,6 +38,7 @@ function LoginPage() {
       password: password,
     });
     localStorage.setItem("token", res.jwtToken);
+    localStorage.setItem("name", res.user.name);
     if (res) {
       router.push("/home/profile");
     }

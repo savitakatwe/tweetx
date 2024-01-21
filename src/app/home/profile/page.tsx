@@ -6,13 +6,14 @@ import { useState } from "react";
 const Profile = () => {
   //let selectedTab: string;
   const [selectedTab, setSelectedTab] = useState("post");
+  const name = localStorage.getItem("name") || "";
   return (
     <>
       <UserProfile
         url={
           "https://t3.ftcdn.net/jpg/05/57/20/16/360_F_557201692_P86sh0v8g00VseZacjBOOKJmGLSvEpQb.jpg"
         }
-        name={"Savita"}
+        name={name}
         postNumber={200}
         followersNumber={200}
         followingNumber={200}
