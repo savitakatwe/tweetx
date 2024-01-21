@@ -1,6 +1,9 @@
 "use client";
 import Typography from "@/components/Typography/Typography";
 import styled from "styled-components";
+import { string } from "prop-types";
+import { PropsWithChildren, useMemo } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -16,7 +19,18 @@ const StyledChildContainer = styled.div`
   align-items: center;
   gap: 40px;
 `;
+
 const ToolBar = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  console.log(pathname);
+  const toolbarArray = [
+    { label: "Feed", value: "/home/feed" },
+    { label: "User", value: "/home/user" },
+    { label: "Profile", value: "/home/profile" },
+  ];
+
   return (
     <>
       <StyledContainer>
@@ -26,15 +40,16 @@ const ToolBar = () => {
           </Typography>
         </div>
         <StyledChildContainer>
-          <Typography variant={"body"} color={"lightgray"}>
-            Feed
-          </Typography>
-          <Typography variant={"body"} color={"lightgray"}>
-            Users
-          </Typography>
-          <Typography variant={"body"} color={"lightgray"}>
-            Profile
-          </Typography>
+          {toolbarArray.map((item) => (
+            <Typography
+              onClick={() => router.push(item.value)}
+              key={item.value}
+              variant={"body"}
+              color={item.value === pathname ? "#ff748d" : "lightgray"}
+            >
+              {item.label}
+            </Typography>
+          ))}
         </StyledChildContainer>
       </StyledContainer>
     </>
