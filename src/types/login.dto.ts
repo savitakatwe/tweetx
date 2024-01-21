@@ -1,4 +1,4 @@
-import { User } from "@/types/user";
+import { IUser } from "@/types/IUser";
 
 export interface ILoginDtoRequest {
   textId: string;
@@ -7,5 +7,5 @@ export interface ILoginDtoRequest {
 
 export interface ILoginDtoResponse {
   jwtToken: string;
-  user: User;
+  user: IUser;
 }

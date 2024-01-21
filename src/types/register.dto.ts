@@ -1,4 +1,4 @@
-import { User } from "@/types/user";
+import { IUser } from "@/types/IUser";
 
 export interface ISignUpDtoRequest {
   name: string;
@@ -8,5 +8,5 @@ export interface ISignUpDtoRequest {
 
 export interface ISignUpDtoResponse {
   jwtToken: string;
-  user: User;
+  user: IUser;
 }
