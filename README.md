@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Twitter Frontend Assignment
 
-## Getting Started
+Next JS / Typescript
 
-First, run the development server:
+Demo URL 
+https://tweetx-eight.vercel.app/auth/register
 
-```bash
-npm run dev
-# or
+## Demo User 
+Email : savita@gmail.com <br/>
+password : 123 
+
+Deployed in Vercel the server is slow.
+
+
+[Details Here](https://drive.google.com/drive/folders/1JeT9kHSg76fUkWNKOBCgX16fnfkTHSS-)
+
+
+### Perform below commands to set up dev env and run project.
+
+```shell
+yarn
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### For production server run below command
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+yarn start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## List of atomic components
 
-## Learn More
+- Avatar
+- Button
+- Feed
+- Tabs
+- TextBox
+- Typography
+- UserProfile
+- UserRow
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Technologies Covered:
+- ReactJs - UI library
+- NextJs - SSR(server side rendering) Framework
+- NodeJs - To run server-side JavaScript engine.
+- Typescript - To define a strict typing.
+- Eslint - To follow style pattern, Airbnb is used.
+- Prettier - To follow proper spacing, indentation etc.
+- Lint staged - This is used to perform actions on staged files.
