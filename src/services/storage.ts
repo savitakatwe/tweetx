@@ -1,16 +1,18 @@
 class Storage {
   static getItem(key: string) {
     try {
-      // @ts-ignore
       return localStorage.getItem(key);
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   static setItem(key: string, value: unknown) {
     try {
-      // @ts-ignore
       return localStorage.setValue(key, value);
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
 
