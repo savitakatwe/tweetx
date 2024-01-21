@@ -7,6 +7,8 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
   display: flex;
   align-items: center;
+  padding-bottom: 50px;
+  padding-top: 30px;
 `;
 const StyledDiv = styled.div`
   padding-left: 50px;

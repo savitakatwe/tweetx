@@ -1,5 +1,4 @@
 import UserRow from "@/components/UserRow/UserRow";
-import j from "../../../../public/Log in.png";
 
 const User = () => {
   return (
