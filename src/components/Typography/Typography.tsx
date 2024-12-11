@@ -20,7 +20,7 @@ const Typography = ({
   color,
   ...otherProps
 }: PropsWithChildren<ITypographyProps>) => {
-  const typo = useMemo(() => {
+  const typographySize = useMemo(() => {
     switch (variant) {
       case "title1":
         return { size: "20px" };
@@ -34,7 +34,7 @@ const Typography = ({
   }, [variant]);
 
   return (
-    <StyledTypography size={typo.size} color={color} {...otherProps}>
+    <StyledTypography size={typographySize.size} color={color} {...otherProps}>
       {children}
     </StyledTypography>
   );
